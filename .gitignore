@@ -1,0 +1,11 @@
+dist
+node_modules
+logs
+
+data/*
+!data/template.xlsx
+
+
+.DS_Store
+
+bin
