@@ -1,13 +1,19 @@
 {
-	"name": "test01",
+	"name": "quasar-prime-donation",
 	"version": "1.0.0",
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
 	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"type": "module",
 	"scripts": {
 		"checkin": "git add . && git commit -m 'daily commit' -S && git push",
 		"start": "node ./dist/index.js",
 		"watch": "tsc --watch",
 		"build": "rimraf ./dist && tsc",
-		"format": "prettier --write --tab-width 4 --print-width 200 --single-quote \"src/**/*.ts\"",
+		"format": "prettier --write \"src/**/*.ts\"",
 		"lint": "eslint \"src/**/*.ts\"",
 		"lint-fix": "eslint --fix \"src/**/*.ts\"",
 		"lint-fix-dry-run": "eslint --fix-dry-run \"src/**/*.ts\"",
@@ -20,10 +26,6 @@
 		"package": "npx pkg dist/cjs/index-bundle.cjs --targets node18-macos-x64 --out-path bin",
 		"rollup": "npx rollup --config"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"description": "",
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^26.0.1",
 		"@rollup/plugin-json": "^6.1.0",
@@ -37,10 +39,8 @@
 		"rimraf": "^6.0.1",
 		"typescript": "^5.5.4"
 	},
-	"types": "build/index.d.js",
 	"dependencies": {
 		"exceljs": "^4.4.0",
 		"selenium-webdriver": "^4.24.0"
-	},
-	"type": "module"
+	}
 }
