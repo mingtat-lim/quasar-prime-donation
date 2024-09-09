@@ -37,7 +37,7 @@ const dataFilePath = './data/data.xlsx'; // Path to the Excel file
 
 (async function () {
     try {
-        detailsLogs.logFile('=== Excution Start ===');
+        detailsLogs.logFile('=== Execution Start ===');
 
         // Check if file exists and then read it
         await fs.access(dataFilePath); // Check if the file exists
@@ -53,7 +53,7 @@ const dataFilePath = './data/data.xlsx'; // Path to the Excel file
             detailsLogs.log('There are errors in the data. Please rectify the errors and rerun the process.');
             detailsLogs.console(`Log File: ${detailsLogs.name}`);
 
-            detailsLogs.logFile('=== Excution End with Errors ===');
+            detailsLogs.logFile('=== Execution End with Errors ===');
         }
 
         if (!data.isErrorFound) {
@@ -68,19 +68,19 @@ const dataFilePath = './data/data.xlsx'; // Path to the Excel file
 
                     await automate(data.configData, data.sheet1Data, detailsLogs, isDebug);
 
-                    detailsLogs.logFile('=== Excution End ===');
-                    console.warn('Excution Completed');
+                    detailsLogs.logFile('=== Execution End ===');
+                    console.warn('Execution Completed');
                 })
                 .catch((error) => {
                     // Handle the error or terminate the program
                     detailsLogs.log((error as Error).message);
                     // detailsLogs.logFile(error);
                     if ((error as Error).message === 'User cancelled the process.') {
-                        detailsLogs.logFile('=== Excution End ===');
+                        detailsLogs.logFile('=== Execution End ===');
                     } else {
-                        detailsLogs.logFile('=== Excution End with Errors ===');
+                        detailsLogs.logFile('=== Execution End with Errors ===');
                     }
-                    console.warn('Excution Completed');
+                    console.warn('Execution Completed');
 
                     // process.exit(1); // Terminate the program
                 });
